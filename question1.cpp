@@ -94,17 +94,15 @@ int main(){
             arr[i]=power_of_two;
             power_of_two *=2;
         }
-        else if(isPerfectSquare){
+        else if(isPerfectSquare(i+1)){
             arr[i] = power_of_three;
             power_of_three *=3;
         }
         else{
-            if(i >=2){
-                arr[i]=arr[i-1]+arr[i-2];
-            }
-            else{
-                arr[i]=1;
-            }
+            if(i >= 2)
+                arr[i] = arr[i-1] + arr[i-2];
+            else
+                arr[i] = 1;
         }
     }
     cout<<arr[n-1];
